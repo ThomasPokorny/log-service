@@ -1,0 +1,45 @@
+version: "3.3"
+services:
+  logstore:
+      image: postgres:11
+      container_name: logstore
+      environment:
+        - POSTGRES_USER=${LOGSTORE_DB_USER}
+        - POSTGRES_PASSWORD=${LOGSTORE_DB_USER}
+      logging:
+        options:
+          max-size: 10m
+          max-file: "3"
+      ports:
+        - '5432:5432'
+      volumes: 
+          - ./postgres-data:/var/lib/postgresql/data
+      logging:
+        driver: none  
+
+  logservice:
+    build: ../LogApi/install
+    container_name: logservice
+    ports:
+      - "8090:8090"
+    environment:
+      - LOGSTORE_DB_HOST=${LOGSTORE_DB_HOST}
+      - LOGSTORE_DB_USER=${LOGSTORE_DB_USER}
+      - LOGSTORE_DB_PW=${LOGSTORE_DB_PW}
+      - LOGSTORE_PORT=${LOGSTORE_PORT}
+    depends_on:
+      - logstore
+    logging:
+      driver: none
+
+  logproxy:
+    build: ../LogProxy/install/
+    container_name: logproxy
+    ports:
+      - "8080:8080"
+    environment:
+      - LOGSTORE_SERVICE_HOST=${LOGSTORE_SERVICE_HOST}
+      - LOGSTORE_PORT=${LOGSTORE_PORT}
+      - PROXY_PORT=${PROXY_PORT}
+    depends_on:
+      - logservice
