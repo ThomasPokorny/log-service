@@ -2,6 +2,11 @@
 a simple logging microservice.
 ### Usage
 the log-service application allows all basic create and get operations for log entities.
+
+#### Postman Collection
+
+https://www.getpostman.com/collections/05092d06589e21948ee1
+
 ### Requirements
 Apache Maven 3.8 or higher 
 
