@@ -1,7 +1,7 @@
 # log-service
 a simple logging microservice.
 ### Usage
-the log-service application allows all basic create and get operations for log entities.
+the log-service application allows basic create and get operations for log entities.
 
 #### Postman Collection
 
