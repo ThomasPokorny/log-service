@@ -23,13 +23,13 @@ Contains three docker containers, one postregs db, one REST API that communicate
 Change the IP-addresses inside install/.env accordingly. 
 
 ### Install Guide *Quick*
-Running on a \*NIX system execute the *install.sh* shell script inside the project root folder
+Running on a \*NIX system execute the *install.sh* shell script inside the project root folder:
 ```shell
 sh install.sh
 ```
 
 ### Install Guide
-Running on a \*NIX system run the following commands in the shell:
+Running on a \*NIX system run the following commands in the shell inside the project root folder:
 
 ```shell
 mvn -f LogApi/ clean install
