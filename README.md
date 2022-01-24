@@ -10,4 +10,10 @@ Docker 18.* or higher (was build with version 18.09.1)
 docker-compose version 1.24 or higher (should work properly on all versions 1.* but was tested on v.1.24)
 
 #### Architecture
-(DB-Postregs Log-Store ) <--*JDBC*--> [Log-Service] <--*REST*--> [Log-Proxy]
+(DB-Postregs Log-Store ) <-*JDBC*-> [Log-Service] <-*REST*-> [Log-Proxy]
+
+#### Install Guide *Quick*
+Running on a \*NIX system execute the *install.sh* shell script inside the project root folder
+```shell
+sh install.sh
+```
