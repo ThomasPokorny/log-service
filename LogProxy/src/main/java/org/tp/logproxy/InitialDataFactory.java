@@ -54,12 +54,12 @@ public class InitialDataFactory {
         for (int i = 0; i < maxAttempts; i++) {
             try (Socket socket = new Socket()) {
                 socket.connect(new InetSocketAddress(LogStoreProxyController.LOG_STORE_URL, new Integer(LogStoreProxyController.LOG_STORE_PORT)), timeout);
-                System.out.println("[OK] connection to bookstore established!");
+                System.out.println("[OK] connection to log-service established!");
                 return true;
             } catch (IOException ignored) {
             }
         }
-        System.out.println("[FAILURE] cannot establish connection to bookstore");
+        System.out.println("[FAILURE] cannot establish connection to log-service");
         return false;
     }
 
