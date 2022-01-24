@@ -29,7 +29,7 @@ sh install.sh
 ```
 
 ### Install Guide
-Running on a \*NIX system run the following commands in the shell inside the project root folder:
+Running on a \*NIX system run the following commands on the shell inside the project root folder:
 
 ```shell
 mvn -f LogApi/ clean install
